@@ -1,21 +1,19 @@
-sed -i 's/^#fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g' /etc/locale.gen
-locale-gen
-echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
-echo "KEYMAP=fr" > /etc/vconsole.conf
+arch-chroot /mnt sed -i 's/^#fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g' /etc/locale.gen
+arch-chroot /mnt locale-gen
+arch-chroot /mnt echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
+arch-chroot /mnt echo "KEYMAP=fr" > /etc/vconsole.conf
 
-ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+arch-chroot /mnt ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-pacman -Sy --noconfirm grub
-grub-install --no-floppy --recheck /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
+arch-chroot /mnt pacman -Sy --noconfirm grub
+arch-chroot /mnt grub-install --no-floppy --recheck /dev/sda
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "jct-workstation" > /etc/hostname
+arch-chroot /mnt echo "jct-workstation" > /etc/hostname
 
-systemctl enable dhcpcd.service
+arch-chroot /mnt systemctl enable dhcpcd.service
 
-passwd
-
-exit
+arch-chroot /mnt passwd
 
 wget https://raw.githubusercontent.com/jonathancregut/ArchLinux-SetUp/master/postinstall.sh
 cp postinstall.sh /mnt/root/postinstall.sh
