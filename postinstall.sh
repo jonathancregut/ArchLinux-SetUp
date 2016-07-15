@@ -7,7 +7,9 @@ echo "Entrer le mot de passe pour ne nouvel utilisateur"
 passwd jonathan
 
 # Get Yaourt for AUR
-echo "[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf
+echo "[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 pacman -Sy
 
 pacman -S --noconfirm yaourt
