@@ -38,3 +38,22 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt /bin/bash
 sed -i 's/^#fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
+echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
+echo "KEYMAP=fr" > /etc/vconsole.conf
+
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
+pacman -Sy grub
+grub-install --no-floppy --recheck /dev/sda
+
+echo "jct-workstation" > /etc/hostname
+
+systemctl enable dhcpcd.service
+
+passwd
+
+umount -R /mnt/boot
+umount -R /mnt
+
+reboot
