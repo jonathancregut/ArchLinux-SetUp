@@ -46,12 +46,15 @@ ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 pacman -Sy grub
 grub-install --no-floppy --recheck /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "jct-workstation" > /etc/hostname
 
 systemctl enable dhcpcd.service
 
 passwd
+
+exit
 
 umount -R /mnt/boot
 umount -R /mnt
