@@ -20,4 +20,4 @@ systemctl enable gdm
 
 # Workspace
 pacman -S --noconfirm thunderbird filezilla netbeans virtualbox
-yaourt -S --noconfirm intellij-idea-ce-eap android-studio vivaldi sublime-text-dev visual-studio-code
+##TO INSTALL intellij-idea-ce-eap android-studio vivaldi sublime-text-dev visual-studio-code
