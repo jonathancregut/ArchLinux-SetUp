@@ -3,7 +3,7 @@
 ###### Fast Installation of an ArchLinux Distribution by Jonathan Crégut ######
 ###### Last tested with 07/2016 Live CD - Download me and run me as root ######
 ###### Contact me => jonathan.cregut@gmail.com							 ######
-###### Auto partitionning Disk and Dual Boot + UEFI options coming soon  ######
+###### Auto partitionning Disk and Dual Boot for legacy boot not UEFI    ######
 ###############################################################################
 ## http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ######
 ###############################################################################
