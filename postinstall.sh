@@ -15,9 +15,12 @@ pacman -Sy
 pacman -S --noconfirm yaourt
 
 # Gnome
-pacman -Syu --noconfirm gnome gnome-extra gdm
+pacman -Syu --noconfirm gnome gnome-extra gdm deepin deepin-extra
 systemctl enable gdm
 
 # Workspace
-pacman -S --noconfirm thunderbird filezilla netbeans virtualbox
+yaourt -S --noconfirm evolution filezilla docker chromium code evince libcups cups ghostscript phpstorm libreoffice-fresh libreoffice-fresh-fr ttf-dejavu artwiz-fonts hunspell hunspell-fr mythes libmythes mythes-fr
+usermode -a -G docker jonathan
+systemctl enable org.cups.cupsd.service
+systemctl enable docker.service
 ##TO INSTALL intellij-idea-ce-eap android-studio vivaldi sublime-text-dev visual-studio-code
